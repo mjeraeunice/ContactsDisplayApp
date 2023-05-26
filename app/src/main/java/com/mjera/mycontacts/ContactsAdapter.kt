@@ -4,19 +4,20 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.mjera.mycontacts.databinding.ContactsListItemBinding
 
-class TweetAdapter(var contactList:List<ContactsData>):RecyclerView.Adapter<TweetViewHolder>() {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TweetViewHolder {
+class ContactsAdapter(var contactList:List<ContactsData>):RecyclerView.Adapter< ContactViewHolder>() {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):ContactViewHolder {
         val binding=
             ContactsListItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
-        return TweetViewHolder(binding)
+        return ContactViewHolder(binding)
 
     }
 
-    override fun onBindViewHolder(holder: TweetViewHolder, position: Int) {
-        val currentTweet=contactList.get(position)
+    override fun onBindViewHolder(holder: ContactViewHolder, position: Int) {
+        val currentContact=contactList.get(position)
         val binding=holder.binding
-        binding.tvDisplayName.text=currentTweet.displayName
-        binding.tvPhoneNumber.text = currentTweet.phoneNumber
+        binding.tvDisplayName.text=currentContact.displayName
+        binding.tvPhoneNumber.text =currentContact.phoneNumber
+        binding.tvEmail.text=currentContact.email
     }
 
     override fun getItemCount(): Int {
@@ -24,4 +25,4 @@ class TweetAdapter(var contactList:List<ContactsData>):RecyclerView.Adapter<Twee
     }
 }
 
-class TweetViewHolder(var binding:ContactsListItemBinding):RecyclerView.ViewHolder(binding.root)
+class ContactViewHolder(var binding:ContactsListItemBinding):RecyclerView.ViewHolder(binding.root)

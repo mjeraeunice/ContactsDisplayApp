@@ -18,10 +18,12 @@ class MainActivity : AppCompatActivity() {
         diplayContacts()
     }
     fun diplayContacts(){
-        val contact1=ContactsData("","Kelitu","0723456789")
-        val contact2=ContactsData("","Amina","0765432180")
-        val contactList= listOf(contact1,contact2)
-        val twtAdapter=TweetAdapter(contactList)
+        val contact1=ContactsData("","Kelitu","0720987542","kelitu2@gmail.com")
+        val contact2=ContactsData("","Amina","0735426780","aminaraji23@gmail.com")
+        val contact3=ContactsData("","Kareem","0742426767","kareem4@gmail.com")
+        val contact4=ContactsData("","Naj","0722426780","naraji30@gmail.com")
+        val contactList= listOf(contact1,contact2,contact3,contact4)
+        val twtAdapter=ContactsAdapter(contactList)
         binding.rvContacts.layoutManager=LinearLayoutManager(this)
         binding.rvContacts.adapter=twtAdapter
 
