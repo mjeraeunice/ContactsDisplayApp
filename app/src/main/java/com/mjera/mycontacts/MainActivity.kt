@@ -32,7 +32,6 @@ class MainActivity : AppCompatActivity() {
         val twtAdapter=ContactsAdapter(contactList)
         binding.rvContacts.layoutManager=LinearLayoutManager(this)
         binding.rvContacts.adapter=twtAdapter
-
     }
 
 }
